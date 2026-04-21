@@ -36,7 +36,7 @@
     .header-img {
       position: absolute;
       inset: 0;
-      background: url('assets/images/header2.png') center/cover no-repeat;
+      background: url('header2.png') center/cover no-repeat;
       transform: scale(1.25);
     }
 
@@ -59,11 +59,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      /* ✅ FIX: header-top لا يتأثر بتغيير dir - دائماً من اليمين لليسار */
       direction: ltr;
     }
 
-    /* ✅ FIX: back-btn دائماً على اليسار بدون position:absolute */
     .controls-left {
       display: flex;
       align-items: center;
@@ -268,7 +266,6 @@
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      align-items: center;
       transition: transform 0.15s, box-shadow 0.15s;
       border: none !important;
       box-shadow: 0 4px 16px rgba(0,0,0,0.07);
@@ -285,14 +282,16 @@
 
     .card-top-img {
       width: 100%;
-      height: 90px;
+      aspect-ratio: 1 / 1;
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .card-top-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
       transition: transform 0.3s;
     }
 
@@ -301,19 +300,19 @@
     }
 
     .card-body {
-      padding: 10px 8px 12px;
+      padding: 5px 8px 6px;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      width: 100%;
+      gap: 6px;
     }
 
     .card-img-wrap {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
       overflow: hidden;
-      margin-bottom: 6px;
+      flex-shrink: 0;
     }
 
     .card-img-wrap img {
@@ -326,11 +325,11 @@
       font-size: clamp(11px, 2.3vw, 13px);
       font-weight: 700;
       color: #161D1F;
-      text-align: center;
+      text-align: right;
       line-height: 1.3;
+      flex: 1;
     }
 
-    /* ✅ FIX: Responsive - app يأخذ عرض الجهاز كاملاً */
     @media (min-width: 768px) {
       .app {
         max-width: 100%;
@@ -351,8 +350,6 @@
       .glass-card {
         padding: 24px;
       }
-
-      
 
       .col-6 {
         flex: 0 0 33.333% !important;
@@ -393,10 +390,8 @@
       <div class="header-overlay"></div>
       <div class="header-content">
 
-        <!-- ✅ header-top دائماً direction:ltr حتى لا يتأثر بتغيير اللغة -->
         <div class="header-top">
 
-          <!-- الكونترولز على اليمين دائماً -->
           <div class="controls-left">
 
             <!-- Back arrow -->
@@ -474,7 +469,7 @@
             </div>
             <div class="card-body">
               <div class="card-img-wrap">
-                <img src="assets/images/hotResorts.png" alt="Hot Resorts"/>
+                <img src="hotResorts.png" alt="Hot Resorts"/>
               </div>
               <div class="card-label" data-key="resorts">فنادق و منتجعات</div>
             </div>
@@ -488,7 +483,7 @@
             </div>
             <div class="card-body">
               <div class="card-img-wrap">
-                <img src="assets/images/chaletsBakes.png" alt="Chalets & Breaks"/>
+                <img src="chaletsBakes.png" alt="Chalets & Breaks"/>
               </div>
               <div class="card-label" data-key="chalets">شاليهات و مخيمات</div>
             </div>
@@ -502,7 +497,7 @@
             </div>
             <div class="card-body">
               <div class="card-img-wrap">
-                <img src="assets/images/roomsApts.png" alt="Rooms & Apartments"/>
+                <img src="roomsApts.png" alt="Rooms & Apartments"/>
               </div>
               <div class="card-label" data-key="rooms">غرف و شقق</div>
             </div>
@@ -516,7 +511,7 @@
             </div>
             <div class="card-body">
               <div class="card-img-wrap">
-                <img src="assets/images/caravansCabins.png" alt="Caravans & Cabins"/>
+                <img src="caravansCabins.png" alt="Caravans & Cabins"/>
               </div>
               <div class="card-label" data-key="caravans">كرفانات و أكواخ</div>
             </div>
@@ -530,7 +525,7 @@
             </div>
             <div class="card-body">
               <div class="card-img-wrap">
-                <img src="assets/images/staydh.png" alt="Stay Dhofar"/>
+                <img src="staydh.png" alt="Stay Dhofar"/>
               </div>
               <div class="card-label" data-key="buffets">بوفهيات</div>
             </div>
@@ -544,7 +539,7 @@
             </div>
             <div class="card-body">
               <div class="card-img-wrap">
-                <img src="assets/images/addprop.png" alt="Add Property"/>
+                <img src="addprop.png" alt="Add Property"/>
               </div>
               <div class="card-label" data-key="addprop">سجل عقارك الان</div>
             </div>
@@ -637,16 +632,12 @@
     function applyLanguage(lang) {
       const t = translations[lang];
 
-      /* ✅ FIX: تغيير اتجاه الصفحة كاملاً */
       document.documentElement.lang = lang;
       document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
 
-      /* ✅ FIX: تغيير نصوص الهيدر */
       document.getElementById("mainTitle").innerText = t.title;
       document.getElementById("mainSub").innerText = t.sub;
 
-      /* ✅ FIX: تغيير نصوص كل البطاقات */
-      /* تحديث الترحيب */
       document.getElementById("greetingName").innerText = greetingTr[lang].name;
 
       document.querySelectorAll("[data-key]").forEach(el => {
@@ -665,7 +656,7 @@
       applyLanguage(this.checked ? 'en' : 'ar');
     });
 
-    /* Init: استعادة العملة المحفوظة */
+    /* Init */
     const savedCurrency = localStorage.getItem("currency");
     if (savedCurrency) document.getElementById("selectedCurrency").innerText = savedCurrency;
 
