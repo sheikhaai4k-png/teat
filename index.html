@@ -72,15 +72,17 @@
       min-height: 36px;
     }
 
-    .header-logo {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  .header-top {
+  display: flex;
+  align-items: center;
+  direction: ltr;
+  min-height: 36px;
+  justify-content: space-around; 
+  /* 👈 أضيفي هذا */
+}
 
     .header-logo img {
-      width: 80px;
+      width: 90px;
       height: auto;
       filter: brightness(0) invert(1);
     }
@@ -114,6 +116,7 @@
       color: #fff;
       flex-shrink: 0;
     }
+    
 
     .glass-card {
       margin-top: auto;
@@ -143,6 +146,7 @@
       line-height: 1.5;
     }
 
+    /* ── Floating Orbs in Header ── */
     .header-orbs {
       position: absolute;
       inset: 0;
@@ -156,34 +160,81 @@
       animation: float-orb 20s ease-in-out infinite;
     }
 
-    .h-orb-1 { width:120px; height:120px; background:linear-gradient(135deg,rgba(0,179,119,0.45),rgba(0,135,90,0.3)); filter:blur(30px); top:-30px; left:-20px; animation-delay:0s; }
-    .h-orb-2 { width:90px; height:90px; background:linear-gradient(135deg,rgba(78,205,196,0.35),rgba(78,205,196,0.2)); filter:blur(25px); bottom:10px; right:-10px; animation-delay:-5s; }
-    .h-orb-3 { width:70px; height:70px; background:linear-gradient(135deg,rgba(255,215,0,0.25),rgba(255,107,107,0.2)); filter:blur(20px); top:50%; left:50%; animation-delay:-10s; }
-    .h-orb-4 { width:50px; height:50px; background:linear-gradient(135deg,rgba(0,212,145,0.4),rgba(0,179,119,0.25)); filter:blur(15px); bottom:20px; left:20%; animation-delay:-7s; }
+    .h-orb-1 {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, rgba(0,179,119,0.45), rgba(0,135,90,0.3));
+      filter: blur(30px);
+      top: -30px;
+      left: -20px;
+      animation-delay: 0s;
+    }
+
+    .h-orb-2 {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, rgba(78,205,196,0.35), rgba(78,205,196,0.2));
+      filter: blur(25px);
+      bottom: 10px;
+      right: -10px;
+      animation-delay: -5s;
+    }
+
+    .h-orb-3 {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, rgba(255,215,0,0.25), rgba(255,107,107,0.2));
+      filter: blur(20px);
+      top: 50%;
+      left: 50%;
+      animation-delay: -10s;
+    }
+
+    .h-orb-4 {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, rgba(0,212,145,0.4), rgba(0,179,119,0.25));
+      filter: blur(15px);
+      bottom: 20px;
+      left: 20%;
+      animation-delay: -7s;
+    }
 
     @keyframes float-orb {
-      0%,100% { transform:translate(0,0) scale(1); }
-      25%      { transform:translate(18px,-18px) scale(1.08); }
-      50%      { transform:translate(-12px,14px) scale(0.95); }
-      75%      { transform:translate(14px,20px) scale(1.05); }
+      0%,  100% { transform: translate(0, 0) scale(1); }
+      25%        { transform: translate(18px, -18px) scale(1.08); }
+      50%        { transform: translate(-12px, 14px) scale(0.95); }
+      75%        { transform: translate(14px, 20px) scale(1.05); }
     }
 
-    .bubble { position:absolute; border-radius:50%; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.25); animation:bubble-float ease-in-out infinite; pointer-events:none; }
-    .bubble-1 { width:8px;  height:8px;  top:18%; left:12%; animation-duration:3.5s; animation-delay:0s; }
-    .bubble-2 { width:5px;  height:5px;  top:35%; left:38%; animation-duration:4.2s; animation-delay:-1s; }
-    .bubble-3 { width:10px; height:10px; top:55%; left:65%; animation-duration:3.8s; animation-delay:-2s; }
-    .bubble-4 { width:6px;  height:6px;  top:22%; left:78%; animation-duration:4.5s; animation-delay:-0.5s; }
-    .bubble-5 { width:7px;  height:7px;  top:70%; left:25%; animation-duration:3.2s; animation-delay:-1.5s; }
-    .bubble-6 { width:4px;  height:4px;  top:45%; left:88%; animation-duration:5s;   animation-delay:-3s; }
-    .bubble-7 { width:9px;  height:9px;  top:80%; left:55%; animation-duration:4s;   animation-delay:-2.5s; }
-    .bubble-8 { width:5px;  height:5px;  top:12%; left:52%; animation-duration:3.6s; animation-delay:-0.8s; }
+    /* ── Small Bubbles ── */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.25);
+      animation: bubble-float ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .bubble-1 { width:8px;  height:8px;  top:18%;  left:12%;  animation-duration:3.5s; animation-delay:0s; }
+    .bubble-2 { width:5px;  height:5px;  top:35%;  left:38%;  animation-duration:4.2s; animation-delay:-1s; }
+    .bubble-3 { width:10px; height:10px; top:55%;  left:65%;  animation-duration:3.8s; animation-delay:-2s; }
+    .bubble-4 { width:6px;  height:6px;  top:22%;  left:78%;  animation-duration:4.5s; animation-delay:-0.5s; }
+    .bubble-5 { width:7px;  height:7px;  top:70%;  left:25%;  animation-duration:3.2s; animation-delay:-1.5s; }
+    .bubble-6 { width:4px;  height:4px;  top:45%;  left:88%;  animation-duration:5s;   animation-delay:-3s; }
+    .bubble-7 { width:9px;  height:9px;  top:80%;  left:55%;  animation-duration:4s;   animation-delay:-2.5s; }
+    .bubble-8 { width:5px;  height:5px;  top:12%;  left:52%;  animation-duration:3.6s; animation-delay:-0.8s; }
 
     @keyframes bubble-float {
-      0%,100% { transform:translateY(0px);   opacity:0.7; }
-      50%      { transform:translateY(-12px); opacity:1;   }
+      0%,100% { transform: translateY(0px);   opacity: 0.7; }
+      50%      { transform: translateY(-12px); opacity: 1;   }
     }
 
-    .hero-badge-top { margin-bottom: 10px; }
+    /* ── Badge ── */
+    .hero-badge-top {
+      margin-bottom: 10px;
+    }
 
     .badge-pulse {
       display: inline-flex;
@@ -200,146 +251,630 @@
     }
 
     @keyframes badge-pulse {
-      0%,100% { box-shadow: 0 0 0 0 rgba(0,179,119,0.4); }
-      50%      { box-shadow: 0 0 0 8px rgba(0,179,119,0); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0, 179, 119, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(0, 179, 119, 0); }
     }
 
-    .hero-stats { display:flex; align-items:center; gap:12px; padding-top:14px; margin-top:14px; border-top:1px solid rgba(255,255,255,0.2); }
-    .stat-item  { display:flex; flex-direction:column; align-items:center; flex:1; }
-    .stat-number { font-size:18px; font-weight:800; color:#ffffff; }
-    .stat-label  { font-size:10px; color:rgba(255,255,255,0.75); margin-top:2px; }
-    .stat-divider { width:1px; height:28px; background:rgba(255,255,255,0.2); }
+    /* ── Stats ── */
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 14px;
+      margin-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
 
-    .wave-divider { position:relative; width:calc(100% + 40px); margin-left:-20px; margin-right:-20px; margin-top:-20px; margin-bottom:0; line-height:0; overflow:hidden; }
-    .wave-divider svg { display:block; width:100%; height:110px; }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
 
-    .search-section { margin-bottom:20px; margin-top:2px; position:relative; z-index:10; }
-    .search-card { background:white; border-radius:20px; padding:6px; display:flex; align-items:center; gap:8px; box-shadow:0 10px 40px rgba(0,0,0,0.1); border:1px solid rgba(0,179,119,0.15); }
-    .search-icon { width:44px; height:44px; background:linear-gradient(135deg,#00B377,#00D491); border-radius:14px; display:flex; align-items:center; justify-content:center; color:white; flex-shrink:0; }
-    .search-input { flex:1; border:none; outline:none; font-size:14px; color:#0A1628; font-family:'IBM Plex Sans Arabic',sans-serif; background:transparent; direction:rtl; }
-    .search-input::placeholder { color:#9CA3AF; }
-    .search-btn { width:44px; height:44px; background:linear-gradient(135deg,#00B377,#00D491); border:none; border-radius:14px; color:white; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:transform 0.2s; }
-    .search-btn:hover { transform:scale(1.05); }
+    .stat-number {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+    }
 
-    .section-header { text-align:center; margin-bottom:20px; }
-    .section-tag { display:inline-flex; align-items:center; gap:6px; background:linear-gradient(135deg,rgba(0,179,119,0.1),rgba(0,179,119,0.05)); color:#00B377; padding:7px 18px; border-radius:30px; font-size:13px; font-weight:600; border:1px solid rgba(0,179,119,0.2); margin-bottom:10px; }
-    .tag-icon { animation:spin-slow 4s linear infinite; }
-    @keyframes spin-slow { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
-    .section-title { font-size:clamp(20px,5vw,26px); font-weight:800; color:#0A1628; margin-bottom:6px; }
-    .gradient-text { background:linear-gradient(135deg,#00B377,#4ECDC4); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .stat-label {
+      font-size: 10px;
+      color: rgba(255,255,255,0.75);
+      margin-top: 2px;
+    }
 
-    .card-body { padding:8px 10px 4px; display:flex; flex-direction:row; align-items:center; gap:8px; }
-    .card-body-inner { flex:1; display:flex; flex-direction:column; gap:4px; }
-    .card-explore { display:flex; align-items:center; gap:3px; font-size:9px; font-weight:600; color:#00B377; }
-    .card-explore svg { transition:transform 0.2s; }
-    .card-item:hover .card-explore svg { transform:translateX(-3px); }
+    .stat-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255, 255, 255, 0.2);
+    }
 
+    /* ── Wave Divider ── */
+    .wave-divider {
+      position: relative;
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      margin-right: -20px;
+      margin-top: -20px;
+      margin-bottom: 0;
+      line-height: 0;
+      overflow: hidden;
+    }
+
+    .wave-divider svg {
+      display: block;
+      width: 100%;
+      height: 110px;
+    }
+
+    /* ── Search Bar ── */
+    .search-section {
+      margin-bottom: 20px;
+      margin-top: 2px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .search-card {
+      background: white;
+      border-radius: 20px;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,179,119,0.15);
+    }
+
+    .search-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #00B377, #00D491);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      color: #0A1628;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      background: transparent;
+      direction: rtl;
+    }
+
+    .search-input::placeholder { color: #9CA3AF; }
+
+    .search-btn {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #00B377, #00D491);
+      border: none;
+      border-radius: 14px;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+
+    .search-btn:hover { transform: scale(1.05); }
+
+    /* ── Section Header ── */
+    .section-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(0,179,119,0.1), rgba(0,179,119,0.05));
+      color: #00B377;
+      padding: 7px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid rgba(0,179,119,0.2);
+      margin-bottom: 10px;
+    }
+
+    .tag-icon {
+      animation: spin-slow 4s linear infinite;
+    }
+
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .section-title {
+      font-size: clamp(20px, 5vw, 26px);
+      font-weight: 800;
+      color: #0A1628;
+      margin-bottom: 6px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #00B377, #4ECDC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .card-body {
+      padding: 8px 10px 4px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-body-inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .card-explore {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      font-weight: 600;
+      color: #00B377;
+    }
+
+    .card-explore svg {
+      transition: transform 0.2s;
+    }
+
+    .card-item:hover .card-explore svg {
+      transform: translateX(-3px);
+    }
+
+    /* ── Card Scroll Animation ── */
     .card-item {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.15s, scale 0.15s;
+    }
+
+    .card-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-item:nth-child(1) { transition-delay: 0.05s; }
+    .card-item:nth-child(2) { transition-delay: 0.15s; }
+    .card-item:nth-child(3) { transition-delay: 0.25s; }
+    .card-item:nth-child(4) { transition-delay: 0.35s; }
+    .card-item:nth-child(5) { transition-delay: 0.45s; }
+    .card-item:nth-child(6) { transition-delay: 0.55s; }
+
+    .grid-area {
+      padding: 30px 20px 20px;
+      margin-top: 0;
+    }
+
+    /* ── Offers Banner ── */
+    .offers-section { margin: 24px 0; }
+
+    .offers-banner-creative {
+      position: relative;
+      background: linear-gradient(135deg, #0A1628 0%, #1A2D4A 100%);
+      border-radius: 28px;
+      padding: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    .banner-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=300&fit=crop') center/cover;
+      opacity: 0.2;
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .banner-badge { position: relative; flex-shrink: 0; }
+
+    .pulse-ring {
+      position: absolute;
+      inset: -4px;
+      border: 2px solid #00B377;
+      border-radius: 50%;
+      animation: pulse-ring 1.5s ease-out infinite;
+    }
+
+    @keyframes pulse-ring {
+      0%   { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+
+    .badge-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #00B377, #00D491);
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .banner-text { flex: 1; }
+    .banner-text h3 { font-size: 20px; font-weight: 800; color: white; margin-bottom: 3px; }
+
+    .discount {
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .banner-text p { font-size: 12px; color: rgba(255,255,255,0.7); }
+
+    .offers-btn-creative {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      color: #0A1628;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 25px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      white-space: nowrap;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .offers-btn-creative:hover { transform: scale(1.05); }
+
+    .banner-decoration { position: absolute; top: -30px; left: -30px; width: 120px; height: 120px; }
+
+    .deco-circle { position: absolute; border-radius: 50%; background: #00B377; opacity: 0.1; }
+    .deco-circle:first-child { width: 80px; height: 80px; top: 0; left: 0; }
+    .deco-circle:last-child  { width: 50px; height: 50px; bottom: 10px; left: 30px; }
+
+    /* ── Destinations ── */
+    .destinations-section { margin-bottom: 24px; }
+
+    .section-title-sm {
+      font-size: clamp(16px, 4vw, 20px);
+      font-weight: 800;
+      color: #0A1628;
+      margin-bottom: 14px;
+    }
+
+    .destinations-scroll {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .destinations-scroll::-webkit-scrollbar { display: none; }
+    .destinations-scroll { scrollbar-width: none; }
+
+    .dest-card {
+      flex-shrink: 0;
+      width: 130px;
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      scroll-snap-align: start;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .dest-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+    .dest-image { width: 100%; height: 85px; overflow: hidden; }
+    .dest-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .dest-card:hover .dest-image img { transform: scale(1.1); }
+    .dest-info { padding: 10px; }
+    .dest-info h4 { font-size: 12px; font-weight: 700; color: #0A1628; margin-bottom: 2px; }
+    .dest-info span { font-size: 11px; color: #00B377; font-weight: 600; }
+
+    /* ── Why Us ── */
+    .why-section { margin-bottom: 32px; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 20px;
+      padding: 18px 10px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba(0,179,119,0.12), rgba(0,179,119,0.05));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      color: #00B377;
+    }
+
+    .feature-card h4 { font-size: 12px; font-weight: 700; color: #0A1628; margin-bottom: 4px; }
+    .feature-card p  { font-size: 10px; color: #6B7280; }
+
+    /* ── Currency Dropdown ── */
+    .currency-dropdown {
+      position: relative;
+    }
+
+    .currency-btn {
+      background: transparent;
+      color: white;
+      padding: 0 8px;
+      border-radius: 16px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      white-space: nowrap;
+      width: 80px;
+      height: 31px;
+      height: 28px;
+    }
+
+    .currency-menu {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      display: none;
+      min-width: 70px;
+      animation: fadeIn 0.2s ease;
+      z-index: 100;
+    }
+
+    .currency-menu div {
+      padding: 8px;
+      font-size: 12px;
+      text-align: center;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .currency-menu div:hover {
+      background: rgba(0,0,0,0.05);
+    }
+
+    /* ── Language Switch ── */
+    .lang-switch {
+      position: relative;
+      width: 56px;
+      height: 28px;
+      display: inline-block;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .lang-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+
+    .lang-switch .slider {
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.08);
+      border-radius: 28px;
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .lang-switch .slider::before {
+      content: "AR";
+      position: absolute;
+      height: 22px;
+      width: 22px;
+      left: 3px;
+      top: 2px;
+      background: white;
+      border-radius: 50%;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7px;
+      font-weight: 800;
+      color: #00B377;
+    }
+
+    .lang-switch input:checked + .slider::before {
+      content: "EN";
+      transform: translateX(28px);
+    }
+
+    .lang-switch .text { display: none; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Cards ── */
+    .card-item {
       background: white;
       border-radius: 20px;
       overflow: hidden;
       cursor: pointer;
       display: flex;
       flex-direction: column;
+      transition: transform 0.15s, box-shadow 0.15s;
       border: none !important;
       box-shadow: 0 4px 16px rgba(0,0,0,0.07);
     }
 
-    .card-item.visible { opacity:1; transform:translateY(0); }
-    .card-item:nth-child(1) { transition-delay:0.05s; }
-    .card-item:nth-child(2) { transition-delay:0.15s; }
-    .card-item:nth-child(3) { transition-delay:0.25s; }
-    .card-item:nth-child(4) { transition-delay:0.35s; }
-    .card-item:nth-child(5) { transition-delay:0.45s; }
-    .card-item:nth-child(6) { transition-delay:0.55s; }
-
-    .card-item:hover { box-shadow:0 8px 24px rgba(0,109,68,0.13); transform:scale(1.02); background:white; }
-    .card-item:active { transform:scale(0.97); }
-
-    .card-top-img { width:100%; aspect-ratio:1/1; overflow:hidden; flex-shrink:0; }
-    .card-top-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.3s; }
-    .card-item:hover .card-top-img img { transform:scale(1.07); }
-
-    .card-body { padding:5px 8px 6px; display:flex; flex-direction:row; align-items:center; gap:6px; min-width:0; }
-    .card-img-wrap { width:36px; height:36px; border-radius:8px; overflow:hidden; flex-shrink:0; }
-    .card-img-wrap img { width:100%; height:100%; object-fit:contain; }
-    .card-label { font-size:10px; font-weight:700; color:#161D1F; text-align:right; line-height:1.3; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-
-    .grid-area { padding:30px 20px 20px; margin-top:0; }
-
-    .offers-section { margin:24px 0; }
-    .offers-banner-creative { position:relative; background:linear-gradient(135deg,#0A1628 0%,#1A2D4A 100%); border-radius:28px; padding:22px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.2); }
-    .banner-bg { position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=300&fit=crop') center/cover; opacity:0.2; }
-    .banner-content { position:relative; z-index:2; display:flex; align-items:center; gap:14px; }
-    .banner-badge { position:relative; flex-shrink:0; }
-    .pulse-ring { position:absolute; inset:-4px; border:2px solid #00B377; border-radius:50%; animation:pulse-ring 1.5s ease-out infinite; }
-    @keyframes pulse-ring { 0% { transform:scale(1); opacity:1; } 100% { transform:scale(1.5); opacity:0; } }
-    .badge-text { display:flex; align-items:center; justify-content:center; width:56px; height:56px; background:linear-gradient(135deg,#00B377,#00D491); border-radius:50%; font-size:10px; font-weight:700; color:white; text-align:center; line-height:1.3; }
-    .banner-text { flex:1; }
-    .banner-text h3 { font-size:20px; font-weight:800; color:white; margin-bottom:3px; }
-    .discount { background:linear-gradient(135deg,#FFD700,#FFA500); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-    .banner-text p { font-size:12px; color:rgba(255,255,255,0.7); }
-    .offers-btn-creative { display:flex; align-items:center; gap:6px; background:white; color:#0A1628; border:none; padding:10px 14px; border-radius:25px; font-size:12px; font-weight:600; cursor:pointer; font-family:'IBM Plex Sans Arabic',sans-serif; white-space:nowrap; transition:transform 0.2s; flex-shrink:0; }
-    .offers-btn-creative:hover { transform:scale(1.05); }
-    .banner-decoration { position:absolute; top:-30px; left:-30px; width:120px; height:120px; }
-    .deco-circle { position:absolute; border-radius:50%; background:#00B377; opacity:0.1; }
-    .deco-circle:first-child { width:80px; height:80px; top:0; left:0; }
-    .deco-circle:last-child  { width:50px; height:50px; bottom:10px; left:30px; }
-
-    .destinations-section { margin-bottom:24px; }
-    .section-title-sm { font-size:clamp(16px,4vw,20px); font-weight:800; color:#0A1628; margin-bottom:14px; }
-    .destinations-scroll { display:flex; gap:12px; overflow-x:auto; padding-bottom:8px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
-    .destinations-scroll::-webkit-scrollbar { display:none; }
-    .dest-card { flex-shrink:0; width:130px; background:white; border-radius:18px; overflow:hidden; cursor:pointer; transition:transform 0.2s,box-shadow 0.2s; scroll-snap-align:start; box-shadow:0 4px 20px rgba(0,0,0,0.08); }
-    .dest-card:hover { transform:translateY(-4px); box-shadow:0 8px 30px rgba(0,0,0,0.12); }
-    .dest-image { width:100%; height:85px; overflow:hidden; }
-    .dest-image img { width:100%; height:100%; object-fit:cover; transition:transform 0.3s; }
-    .dest-card:hover .dest-image img { transform:scale(1.1); }
-    .dest-info { padding:10px; }
-    .dest-info h4 { font-size:12px; font-weight:700; color:#0A1628; margin-bottom:2px; }
-    .dest-info span { font-size:11px; color:#00B377; font-weight:600; }
-
-    .why-section { margin-bottom:32px; }
-    .features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-    .feature-card { background:white; border-radius:20px; padding:18px 10px; text-align:center; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.2s,box-shadow 0.2s; }
-    .feature-card:hover { transform:translateY(-4px); box-shadow:0 8px 30px rgba(0,0,0,0.1); }
-    .feature-icon { width:48px; height:48px; background:linear-gradient(135deg,rgba(0,179,119,0.12),rgba(0,179,119,0.05)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 10px; color:#00B377; }
-    .feature-card h4 { font-size:12px; font-weight:700; color:#0A1628; margin-bottom:4px; }
-    .feature-card p  { font-size:10px; color:#6B7280; }
-
-    .currency-dropdown { position:relative; }
-    .currency-btn { background:transparent; color:white; padding:0 8px; border-radius:16px; font-size:11px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:3px; white-space:nowrap; width:70px; height:28px; }
-    .currency-menu { position:absolute; top:35px; left:0; background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); border-radius:14px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.15); display:none; min-width:70px; animation:fadeIn 0.2s ease; z-index:100; }
-    .currency-menu div { padding:8px; font-size:12px; text-align:center; cursor:pointer; color:#333; }
-    .currency-menu div:hover { background:rgba(0,0,0,0.05); }
-
-    .lang-switch { position:relative; width:56px; height:28px; display:inline-block; flex-shrink:0; cursor:pointer; }
-    .lang-switch input { opacity:0; width:0; height:0; position:absolute; }
-    .lang-switch .slider { position:absolute; inset:0; background:rgba(255,255,255,0.2); border-radius:28px; transition:0.3s; border:1px solid rgba(255,255,255,0.3); }
-    .lang-switch .slider::before { content:"AR"; position:absolute; height:22px; width:22px; left:3px; top:2px; background:white; border-radius:50%; transition:0.3s; display:flex; align-items:center; justify-content:center; font-size:7px; font-weight:800; color:#00B377; }
-    .lang-switch input:checked + .slider::before { content:"EN"; transform:translateX(28px); }
-    .lang-switch .text { display:none; }
-
-    @keyframes fadeIn { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
-
-    @media (min-width:768px) {
-      .app { max-width:100%; }
-      .header { height:320px; }
-      .glass-title { font-size:32px; }
-      .glass-sub { font-size:16px; }
-      .glass-card { padding:24px; }
-      .col-6 { flex:0 0 33.333% !important; max-width:33.333% !important; }
+    .card-item:hover {
+      box-shadow: 0 8px 24px rgba(0,109,68,0.13);
+      transform: scale(1.02);
+      background: white;
     }
 
-    @media (min-width:1024px) {
-      .app { max-width:900px; margin:0 auto; }
-      .header { height:380px; }
-      .glass-title { font-size:38px; }
-      .glass-sub { font-size:18px; }
-      .col-6 { flex:0 0 33.333% !important; max-width:33.333% !important; }
+    .card-item:active {
+      transform: scale(0.97);
+    }
+
+    .card-top-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .card-top-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    .card-item:hover .card-top-img img {
+      transform: scale(1.07);
+    }
+
+    .card-body {
+      padding: 5px 8px 6px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .card-img-wrap {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .card-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #161D1F;
+      text-align: right;
+      line-height: 1.3;
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ✅ FIX: Responsive - app يأخذ عرض الجهاز كاملاً */
+    @media (min-width: 768px) {
+      .app {
+        max-width: 100%;
+      }
+
+      .header {
+        height: 320px;
+      }
+
+      .glass-title {
+        font-size: 32px;
+      }
+
+      .glass-sub {
+        font-size: 16px;
+      }
+
+      .glass-card {
+        padding: 24px;
+      }
+
+      
+
+      .col-6 {
+        flex: 0 0 33.333% !important;
+        max-width: 33.333% !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .app {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .header {
+        height: 380px;
+      }
+
+      .glass-title {
+        font-size: 38px;
+      }
+
+      .glass-sub {
+        font-size: 18px;
+      }
+
+      .col-6 {
+        flex: 0 0 33.333% !important;
+        max-width: 33.333% !important;
+      }
     }
   </style>
 </head>
@@ -349,11 +884,13 @@
     <div class="header">
       <div class="header-img"></div>
       <div class="header-overlay"></div>
+      <!-- Floating Orbs -->
       <div class="header-orbs">
         <div class="h-orb h-orb-1"></div>
         <div class="h-orb h-orb-2"></div>
         <div class="h-orb h-orb-3"></div>
         <div class="h-orb h-orb-4"></div>
+        <!-- Small Bubbles -->
         <div class="bubble bubble-1"></div>
         <div class="bubble bubble-2"></div>
         <div class="bubble bubble-3"></div>
@@ -365,13 +902,20 @@
       </div>
       <div class="header-content">
 
+        <!-- ✅ header-top دائماً direction:ltr حتى لا يتأثر بتغيير اللغة -->
         <div class="header-top">
+
+          <!-- الكونترولز على اليسار -->
           <div class="controls-left">
+
+            <!-- Back arrow -->
             <div class="ctrl-btn" onclick="history.back()" style="padding:5px 7px;">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
                 <polyline points="15 18 9 12 15 6"/>
               </svg>
             </div>
+
+            <!-- Currency -->
             <div class="currency-dropdown ctrl-btn" onclick="toggleCurrencyDropdown()">
               <span id="selectedCurrency">OMR</span>
               <span>▼</span>
@@ -383,6 +927,8 @@
                 <div onclick="selectCurrency('KWD')">KWD</div>
               </div>
             </div>
+
+            <!-- Language Switch -->
             <div class="ctrl-btn" style="padding:0; overflow:hidden; border-radius:14px;">
               <label class="lang-switch" style="margin:0;">
                 <input type="checkbox" id="langToggle">
@@ -392,55 +938,75 @@
                 </span>
               </label>
             </div>
+
           </div>
 
           <!-- اللوجو في المنتصف -->
           <div class="header-logo">
-            <img src="valo10.png" alt="Valo"/>
+            <img src="valologe.png" alt="Valo"/>
           </div>
 
-          <span class="greeting-name" id="greetingName">حياك شيخه</span>
         </div>
 
+        <!-- Glass Card -->
         <div class="glass-card">
           <div class="hero-badge-top">
-            <span class="badge-pulse">✦ صيف ظفار مع ڤـالو 🌿</span>
+            <span class="badge-pulse" id="greetingName">حياك شيخه 👋</span>
           </div>
           <div class="glass-sub" id="mainSub" data-key="sub">
-            اكتشف أجمل أماكن الإقامة والمنتجعات والرحلات في ظفار بكل سهولة.
+            من إقامة بسيطة إلى تجربة فاخرة… كل الخيارات متاحة.
           </div>
+
+          <!-- Stats -->
           <div class="hero-stats">
             <div class="stat-item">
-              <span class="stat-number">+50</span>
+              <span class="stat-number">+5000</span>
               <span class="stat-label" data-key="statPlaces">مكان</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-number">4.8</span>
-              <span class="stat-label" data-key="statRating">تقييم</span>
+              <span class="stat-number">احجز</span>
+              <span class="stat-label" data-key="statRating">و فسط</span>
             </div>
             <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-number">100%</span>
-              <span class="stat-label" data-key="statSatisfy">رضا</span>
+              <div class="stat-item">
+              <span class="stat-number">4.8</span>
+              <span class="stat-label" data-key="statRating">تقييم</span>
             </div>
           </div>
         </div>
 
       </div>
+
     </div>
 
     <div class="grid-area">
 
+
+        <!-- <div style="display:flex; justify-content:center; margin: 10px 0 6px;">
+        <img src="valologe.png" alt="Valo" style="width:90px; height:auto;"/>
+      </div> -->
+
+      <!-- Wave Divider -->
       <div class="wave-divider">
         <svg viewBox="0 0 500 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,0 C60,50 140,5 220,35 C300,60 390,5 500,28 L500,80 L0,80 Z" fill="rgba(0,212,145,0.15)"/>
-          <path d="M0,8 C80,55 160,8 250,30 C340,52 430,5 500,22 L500,80 L0,80 Z" fill="rgba(0,179,119,0.25)"/>
-          <path d="M0,18 C70,60 155,12 240,38 C325,60 420,15 500,35 L500,80 L0,80 Z" fill="rgba(0,150,100,0.35)"/>
-          <path d="M0,28 C90,65 170,18 260,42 C350,65 435,20 500,42 L500,80 L0,80 Z" fill="#F7FAF8"/>
+          <path d="M0,0 C60,50 140,5 220,35 C300,60 390,5 500,28 L500,80 L0,80 Z"
+                fill="rgba(0,212,145,0.15)"/>
+          <path d="M0,8 C80,55 160,8 250,30 C340,52 430,5 500,22 L500,80 L0,80 Z"
+                fill="rgba(0,179,119,0.25)"/>
+          <path d="M0,18 C70,60 155,12 240,38 C325,60 420,15 500,35 L500,80 L0,80 Z"
+                fill="rgba(0,150,100,0.35)"/>
+          <path d="M0,28 C90,65 170,18 260,42 C350,65 435,20 500,42 L500,80 L0,80 Z"
+                fill="#F7FAF8"/>
         </svg>
       </div>
 
+      <!-- Logo between wave and search -->
+      <!-- <div style="display:flex; justify-content:center; margin: 10px 0 6px;">
+        <img src="assets/images/valologe.png" alt="Valo" style="width:90px; height:auto;"/>
+      </div> -->
+
+      <!-- Search Bar -->
       <div class="search-section">
         <div class="search-card">
           <div class="search-icon">
@@ -448,7 +1014,7 @@
               <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
             </svg>
           </div>
-          <input type="text" id="searchInput" class="search-input" placeholder="ابحث عن وجهتك المثالية..."/>
+          <input type="text" id="searchInput" class="search-input" placeholder="وين تبا تروح ..."/>
           <button class="search-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="15 18 9 12 15 6"/>
@@ -457,10 +1023,11 @@
         </div>
       </div>
 
+      <!-- Section Header -->
       <div class="section-header">
         <span class="section-tag"><span class="tag-icon">✦</span> استكشف الآن</span>
-        <h2 class="section-title" data-key="cardsTitle">وجهات إقامة <span class="gradient-text">مميزة</span></h2>
-        <p class="section-desc" data-key="cardsDesc">اختر ما يناسب ذوقك وواستمتع بتجربة استثنائية</p>
+        <h2 class="section-title" data-key="cardsTitle">أماكن تستحق  <span class="gradient-text">التجربة</span></h2>
+        <p class="section-desc" data-key="cardsDesc">اختر ما يناسب ذوقك ووعِش التجربة استثنائية</p>
       </div>
 
       <div class="row g-3">
@@ -470,11 +1037,18 @@
             <div class="card-top-img">
               <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=200&fit=crop" alt="فنادق ومنتجعات"/>
             </div>
-            <div class="card-body">
-              <div class="card-img-wrap"><img src="hotResorts.png" alt="Hot Resorts"/></div>
+                        <div class="card-body">
+              <div class="card-img-wrap">
+                <img src="assets/images/hotResorts.png" alt="Hot Resorts"/>
+              </div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="resorts">فنادق و منتجعات</div>
-                <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
+                <div class="card-explore">
+                  اكتشف المزيد
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="15 18 9 12 15 6"/>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -485,11 +1059,18 @@
             <div class="card-top-img">
               <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=400&h=200&fit=crop" alt="شاليهات"/>
             </div>
-            <div class="card-body">
-              <div class="card-img-wrap"><img src="chaletsBakes.png" alt="Chalets & Breaks"/></div>
+                        <div class="card-body">
+              <div class="card-img-wrap">
+                <img src="assets/images/chaletsBakes.png" alt="Chalets & Breaks"/>
+              </div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="chalets">شاليهات و مخيمات</div>
-                <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
+                <div class="card-explore">
+                  اكتشف المزيد
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="15 18 9 12 15 6"/>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -500,11 +1081,18 @@
             <div class="card-top-img">
               <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400&h=200&fit=crop" alt="غرف وشقق"/>
             </div>
-            <div class="card-body">
-              <div class="card-img-wrap"><img src="roomsApts.png" alt="Rooms & Apartments"/></div>
+                        <div class="card-body">
+              <div class="card-img-wrap">
+                <img src="assets/images/roomsApts.png" alt="Rooms & Apartments"/>
+              </div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="rooms">غرف و شقق</div>
-                <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
+                <div class="card-explore">
+                  اكتشف المزيد
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="15 18 9 12 15 6"/>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -515,11 +1103,18 @@
             <div class="card-top-img">
               <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=400&h=200&fit=crop" alt="كرفانات"/>
             </div>
-            <div class="card-body">
-              <div class="card-img-wrap"><img src="caravansCabins.png" alt="Caravans & Cabins"/></div>
+                        <div class="card-body">
+              <div class="card-img-wrap">
+                <img src="assets/images/caravansCabins.png" alt="Caravans & Cabins"/>
+              </div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="caravans">كرفانات و أكواخ</div>
-                <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
+                <div class="card-explore">
+                  اكتشف المزيد
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="15 18 9 12 15 6"/>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -530,11 +1125,18 @@
             <div class="card-top-img">
               <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=200&fit=crop" alt="بوفيهات"/>
             </div>
-            <div class="card-body">
-              <div class="card-img-wrap"><img src="staydh.png" alt="Stay Dhofar"/></div>
+                        <div class="card-body">
+              <div class="card-img-wrap">
+                <img src="assets/images/staydh.png" alt="Stay Dhofar"/>
+              </div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="buffets">بوفهيات</div>
-                <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
+                <div class="card-explore">
+                  اكتشف المزيد
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="15 18 9 12 15 6"/>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -545,11 +1147,18 @@
             <div class="card-top-img">
               <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=200&fit=crop" alt="سجل عقارك"/>
             </div>
-            <div class="card-body">
-              <div class="card-img-wrap"><img src="addprop.png" alt="Add Property"/></div>
+                        <div class="card-body">
+              <div class="card-img-wrap">
+                <img src="assets/images/addprop.png" alt="Add Property"/>
+              </div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="addprop">سجل عقارك الان</div>
-                <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
+                <div class="card-explore">
+                  اكتشف المزيد
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="15 18 9 12 15 6"/>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -557,6 +1166,7 @@
 
       </div>
 
+      <!-- بانر العروض -->
       <div class="offers-section">
         <div class="offers-banner-creative">
           <div class="banner-bg"></div>
@@ -571,7 +1181,9 @@
             </div>
             <button class="offers-btn-creative">
               <span data-key="offerBtn">احصل على العرض</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
             </button>
           </div>
           <div class="banner-decoration">
@@ -581,47 +1193,82 @@
         </div>
       </div>
 
+      <!-- وجهات لا تفوتك -->
       <div class="destinations-section">
-        <h2 class="section-title-sm" data-key="destTitle">✨ وجهات لا تفوتك</h2>
+        <h2 class="section-title-sm" data-key="destTitle">✨ أماكن لا تفوتك</h2>
         <div class="destinations-scroll">
           <div class="dest-card">
-            <div class="dest-image"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=300&h=180&fit=crop" alt="جبل سمحان"/></div>
-            <div class="dest-info"><h4 data-key="dest1">جبل سمحان</h4><span data-key="dest1Count">3 أماكن</span></div>
+            <div class="dest-image">
+              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=300&h=180&fit=crop" alt="جبل سمحان"/>
+            </div>
+            <div class="dest-info">
+              <h4 data-key="dest1">جبل سمحان</h4>
+              <span data-key="dest1Count">3 أماكن</span>
+            </div>
           </div>
           <div class="dest-card">
-            <div class="dest-image"><img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=300&h=180&fit=crop" alt="وادي دربات"/></div>
-            <div class="dest-info"><h4 data-key="dest2">وادي دربات</h4><span data-key="dest2Count">5 أماكن</span></div>
+            <div class="dest-image">
+              <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=300&h=180&fit=crop" alt="وادي دربات"/>
+            </div>
+            <div class="dest-info">
+              <h4 data-key="dest2">وادي دربات</h4>
+              <span data-key="dest2Count">5 أماكن</span>
+            </div>
           </div>
           <div class="dest-card">
-            <div class="dest-image"><img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=300&h=180&fit=crop" alt="المرباط"/></div>
-            <div class="dest-info"><h4 data-key="dest3">المرباط</h4><span data-key="dest3Count">8 أماكن</span></div>
+            <div class="dest-image">
+              <img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=300&h=180&fit=crop" alt="المرباط"/>
+            </div>
+            <div class="dest-info">
+              <h4 data-key="dest3">المرباط</h4>
+              <span data-key="dest3Count">8 أماكن</span>
+            </div>
           </div>
           <div class="dest-card">
-            <div class="dest-image"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300&h=180&fit=crop" alt="شاطئ المغسيل"/></div>
-            <div class="dest-info"><h4 data-key="dest4">شاطئ المغسيل</h4><span data-key="dest4Count">4 أماكن</span></div>
+            <div class="dest-image">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300&h=180&fit=crop" alt="شاطئ المغسيل"/>
+            </div>
+            <div class="dest-info">
+              <h4 data-key="dest4">شاطئ المغسيل</h4>
+              <span data-key="dest4Count">4 أماكن</span>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- لماذا ڤالو -->
       <div class="why-section">
         <div class="section-header">
           <h2 class="section-title" data-key="whyTitle">لماذا <span class="gradient-text">ڤالو</span>؟</h2>
         </div>
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
             <h4 data-key="feat1">حجز آمن</h4>
-            <p data-key="feat1Sub">دفع آمن وضمان استرداد</p>
+            <p data-key="feat1Sub">منصة موثوقة وتحفظ حقك</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
             <h4 data-key="feat2">دعم 24/7</h4>
-            <p data-key="feat2Sub">نحن هنا دائماً لخدمتك</p>
+            <p data-key="feat2Sub">دائم قريبين منك</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
             <h4 data-key="feat3">جودة مضمونة</h4>
-            <p data-key="feat3Sub">أفضل الوجهات المختارة</p>
+            <p data-key="feat3Sub">لأنك تستحق الجودة </p>
           </div>
         </div>
       </div>
@@ -633,6 +1280,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
+
+    /* ── Currency ── */
     function toggleCurrencyDropdown() {
       const menu = document.getElementById("currencyMenu");
       menu.style.display = menu.style.display === "block" ? "none" : "block";
@@ -650,9 +1299,24 @@
       }
     });
 
+    /* ── Navigate ── */
     const categories = {
-      ar: { 'caravans.html':'كرفانات و أكواخ', 'chalets.html':'شاليهات و مخيمات', 'resorts.html':'فنادق و منتجعات', 'rooms.html':'غرف و شقق', 'dhofar.html':'بوفهيات', 'add-property.html':'سجل عقارك الان' },
-      en: { 'caravans.html':'Caravans & Cabins', 'chalets.html':'Chalets & Camps', 'resorts.html':'Hotels & Resorts', 'rooms.html':'Rooms & Apartments', 'dhofar.html':'Buffets', 'add-property.html':'List Your Property' }
+      ar: {
+        'caravans.html'     : 'كرفانات و أكواخ',
+        'chalets.html'      : 'شاليهات و مخيمات',
+        'resorts.html'      : 'فنادق و منتجعات',
+        'rooms.html'        : 'غرف و شقق',
+        'dhofar.html'       : 'بوفهيات',
+        'add-property.html' : 'سجل عقارك الان',
+      },
+      en: {
+        'caravans.html'     : 'Caravans & Cabins',
+        'chalets.html'      : 'Chalets & Camps',
+        'resorts.html'      : 'Hotels & Resorts',
+        'rooms.html'        : 'Rooms & Apartments',
+        'dhofar.html'       : 'Buffets',
+        'add-property.html' : 'List Your Property',
+      }
     };
 
     function navigate(page) {
@@ -679,14 +1343,14 @@
         offerSub   : "على أول 5 حجوزات لهذا الموسم",
         offerBtn   : "احصل على العرض",
         destTitle  : "✨ وجهات لا تفوتك",
-        dest1: "جبل سمحان",    dest1Count: "3 أماكن",
-        dest2: "وادي دربات",   dest2Count: "5 أماكن",
-        dest3: "المرباط",      dest3Count: "8 أماكن",
-        dest4: "شاطئ المغسيل", dest4Count: "4 أماكن",
+        dest1      : "جبل سمحان",    dest1Count: "3 أماكن",
+        dest2      : "وادي دربات",   dest2Count: "5 أماكن",
+        dest3      : "المرباط",      dest3Count: "8 أماكن",
+        dest4      : "شاطئ المغسيل", dest4Count: "4 أماكن",
         whyTitle   : 'لماذا <span class="gradient-text">ڤالو</span>؟',
-        feat1: "حجز آمن",      feat1Sub: "دفع آمن وضمان استرداد",
-        feat2: "دعم 24/7",     feat2Sub: "نحن هنا دائماً لخدمتك",
-        feat3: "جودة مضمونة", feat3Sub: "أفضل الوجهات المختارة",
+        feat1      : "حجز آمن",      feat1Sub: "دفع آمن وضمان استرداد",
+        feat2      : "دعم 24/7",     feat2Sub: "نحن هنا دائماً لخدمتك",
+        feat3      : "جودة مضمونة", feat3Sub: "أفضل الوجهات المختارة",
         cardsTitle : 'وجهات إقامة <span class="gradient-text">مميزة</span>',
         cardsDesc  : "اختر ما يناسب ذوقك وواستمتع بتجربة استثنائية",
       },
@@ -707,14 +1371,14 @@
         offerSub   : "On first 5 bookings this season",
         offerBtn   : "Get the Offer",
         destTitle  : "✨ Must-Visit Destinations",
-        dest1: "Jabal Samhan",   dest1Count: "3 places",
-        dest2: "Wadi Darbat",    dest2Count: "5 places",
-        dest3: "Mirbat",         dest3Count: "8 places",
-        dest4: "Mughsail Beach", dest4Count: "4 places",
+        dest1      : "Jabal Samhan",   dest1Count: "3 places",
+        dest2      : "Wadi Darbat",    dest2Count: "5 places",
+        dest3      : "Mirbat",         dest3Count: "8 places",
+        dest4      : "Mughsail Beach", dest4Count: "4 places",
         whyTitle   : 'Why <span class="gradient-text">Valo</span>?',
-        feat1: "Safe Booking",   feat1Sub: "Secure payment & refund guarantee",
-        feat2: "24/7 Support",   feat2Sub: "We're always here for you",
-        feat3: "Guaranteed Quality", feat3Sub: "Best curated destinations",
+        feat1      : "Safe Booking",   feat1Sub: "Secure payment & refund guarantee",
+        feat2      : "24/7 Support",   feat2Sub: "We're always here for you",
+        feat3      : "Guaranteed Quality", feat3Sub: "Best curated destinations",
         cardsTitle : 'Featured <span class="gradient-text">Destinations</span>',
         cardsDesc  : "Choose what suits you and enjoy an exceptional experience",
       }
@@ -722,26 +1386,33 @@
 
     function applyLanguage(lang) {
       const t = translations[lang];
+
       document.documentElement.lang = lang;
       document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
 
+      /* Badge */
       const badge = document.querySelector('.badge-pulse');
       if (badge) badge.innerHTML = lang === 'en' ? '✦ Dhofar Summer with Valo 🌿' : '✦ صيف ظفار مع ڤـالو 🌿';
 
+      /* Search placeholder */
       const searchInput = document.getElementById("searchInput");
       if (searchInput) searchInput.placeholder = t.searchPh;
 
+      /* Greeting */
       document.getElementById("greetingName").innerText = greetingTr[lang].name;
 
+      /* Section tag & title */
       const sectionTag = document.querySelector('.section-tag');
       if (sectionTag) sectionTag.innerHTML = lang === 'en'
         ? '<span class="tag-icon">✦</span> Explore Now'
         : '<span class="tag-icon">✦</span> استكشف الآن';
 
-      const htmlKeys = ['offerTitle', 'whyTitle', 'cardsTitle'];
+      /* All data-key elements */
       document.querySelectorAll("[data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
         if (!t[key]) return;
+        /* elements that need innerHTML (have HTML tags) */
+        const htmlKeys = ['offerTitle', 'whyTitle', 'cardsTitle'];
         if (htmlKeys.includes(key)) {
           el.innerHTML = t[key];
         } else {
@@ -749,6 +1420,7 @@
         }
       });
 
+      /* اكتشف المزيد */
       document.querySelectorAll('.card-explore').forEach(el => {
         const svg = el.querySelector('svg').cloneNode(true);
         el.innerHTML = lang === 'en' ? 'Explore More ' : 'اكتشف المزيد ';
@@ -756,23 +1428,33 @@
       });
     }
 
+    /* ── Scroll Animation ── */
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.card-item').forEach(card => observer.observe(card));
+    document.querySelectorAll('.card-item').forEach(card => {
+      observer.observe(card);
+    });
 
+    /* ── Greeting translations ── */
     const greetingTr = {
-      ar: { name: 'حياك شيخه' },
-      en: { name: 'Hayak Shaikha' }
+      ar: { name: 'حياك شيخه 👋' },
+      en: { name: 'Welcome Shaikha 👋' }
     };
 
     document.getElementById("langToggle").addEventListener("change", function () {
       applyLanguage(this.checked ? 'en' : 'ar');
     });
 
+    /* Init: استعادة العملة المحفوظة */
     const savedCurrency = localStorage.getItem("currency");
     if (savedCurrency) document.getElementById("selectedCurrency").innerText = savedCurrency;
+
   </script>
 </body>
 </html>
