@@ -68,16 +68,15 @@
     .header-top {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      position: relative;
       direction: ltr;
+      min-height: 36px;
     }
 
     .header-logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      pointer-events: none;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .header-logo img {
@@ -89,12 +88,32 @@
     .controls-left {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 5px;
+      flex-shrink: 0;
     }
 
-    .greeting-text { display:flex; flex-direction:column; align-items:flex-end; line-height:1.3; }
-    .greeting-hey { font-size:11px; font-weight:500; color:rgba(255,255,255,0.80); }
-    .greeting-name { font-size:15px; font-weight:800; color:#fff; }
+    .ctrl-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.15);
+      border-radius: 14px;
+      padding: 4px 8px;
+      backdrop-filter: blur(10px);
+      font-size: 10px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      gap: 3px;
+      white-space: nowrap;
+    }
+
+    .greeting-name {
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+    }
 
     .glass-card {
       margin-top: auto;
@@ -244,20 +263,10 @@
     .card-top-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.3s; }
     .card-item:hover .card-top-img img { transform:scale(1.07); }
 
-    .card-img-wrap { width:60px; height:60px; border-radius:10px; overflow:hidden; flex-shrink:0; }
+    .card-body { padding:5px 8px 6px; display:flex; flex-direction:row; align-items:center; gap:6px; min-width:0; }
+    .card-img-wrap { width:36px; height:36px; border-radius:8px; overflow:hidden; flex-shrink:0; }
     .card-img-wrap img { width:100%; height:100%; object-fit:contain; }
-
-    .card-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: #161D1F;
-      text-align: right;
-      line-height: 1.3;
-      flex: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+    .card-label { font-size:10px; font-weight:700; color:#161D1F; text-align:right; line-height:1.3; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
     .grid-area { padding:30px 20px 20px; margin-top:0; }
 
@@ -302,20 +311,17 @@
     .feature-card p  { font-size:10px; color:#6B7280; }
 
     .currency-dropdown { position:relative; }
-    .currency-btn { background:rgba(255,255,255,0.2); color:white; padding:4px 10px; border-radius:16px; font-size:11px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:4px; backdrop-filter:blur(10px); white-space:nowrap; }
+    .currency-btn { background:transparent; color:white; padding:0 8px; border-radius:16px; font-size:11px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:3px; white-space:nowrap; width:70px; height:28px; }
     .currency-menu { position:absolute; top:35px; left:0; background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); border-radius:14px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.15); display:none; min-width:70px; animation:fadeIn 0.2s ease; z-index:100; }
     .currency-menu div { padding:8px; font-size:12px; text-align:center; cursor:pointer; color:#333; }
     .currency-menu div:hover { background:rgba(0,0,0,0.05); }
 
-    .lang-switch { position:relative; width:70px; height:28px; display:inline-block; flex-shrink:0; }
-    .lang-switch input { opacity:0; width:0; height:0; }
-    .lang-switch .slider { position:absolute; inset:0; background:rgba(255,255,255,0.25); border-radius:30px; cursor:pointer; transition:0.3s; display:flex; align-items:center; justify-content:space-between; padding:0 8px; font-size:11px; font-weight:700; color:white; overflow:hidden; }
-    .lang-switch .text { z-index:2; transition:0.3s; }
-    .lang-switch .slider::before { content:""; position:absolute; height:22px; width:22px; left:3px; top:3px; background:white; border-radius:50%; transition:0.3s; z-index:1; }
-    .lang-switch input:checked + .slider { background:rgba(255,255,255,0.25); }
-    .lang-switch input:checked + .slider::before { transform:translateX(42px); }
-    .lang-switch input:checked + .slider .ar { opacity:0.4; }
-    .lang-switch input:not(:checked) + .slider .en { opacity:0.4; }
+    .lang-switch { position:relative; width:56px; height:28px; display:inline-block; flex-shrink:0; cursor:pointer; }
+    .lang-switch input { opacity:0; width:0; height:0; position:absolute; }
+    .lang-switch .slider { position:absolute; inset:0; background:rgba(255,255,255,0.2); border-radius:28px; transition:0.3s; border:1px solid rgba(255,255,255,0.3); }
+    .lang-switch .slider::before { content:"AR"; position:absolute; height:22px; width:22px; left:3px; top:2px; background:white; border-radius:50%; transition:0.3s; display:flex; align-items:center; justify-content:center; font-size:7px; font-weight:800; color:#00B377; }
+    .lang-switch input:checked + .slider::before { content:"EN"; transform:translateX(28px); }
+    .lang-switch .text { display:none; }
 
     @keyframes fadeIn { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
 
@@ -361,15 +367,15 @@
 
         <div class="header-top">
           <div class="controls-left">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" style="cursor:pointer;">
-              <polyline points="15 18 9 12 15 6"/>
-            </svg>
-            <div class="currency-dropdown">
-              <div class="currency-btn" onclick="toggleCurrencyDropdown()">
-                <span id="selectedCurrency">OMR</span>
-                ▼
-              </div>
-              <div class="currency-menu" id="currencyMenu">
+            <div class="ctrl-btn" onclick="history.back()" style="padding:5px 7px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </div>
+            <div class="currency-dropdown ctrl-btn" onclick="toggleCurrencyDropdown()">
+              <span id="selectedCurrency">OMR</span>
+              <span>▼</span>
+              <div class="currency-menu" id="currencyMenu" onclick="event.stopPropagation()">
                 <div onclick="selectCurrency('OMR')">OMR</div>
                 <div onclick="selectCurrency('AED')">AED</div>
                 <div onclick="selectCurrency('SAR')">SAR</div>
@@ -377,13 +383,15 @@
                 <div onclick="selectCurrency('KWD')">KWD</div>
               </div>
             </div>
-            <label class="lang-switch">
-              <input type="checkbox" id="langToggle">
-              <span class="slider">
-                <span class="text ar">AR</span>
-                <span class="text en">EN</span>
-              </span>
-            </label>
+            <div class="ctrl-btn" style="padding:0; overflow:hidden; border-radius:14px;">
+              <label class="lang-switch" style="margin:0;">
+                <input type="checkbox" id="langToggle">
+                <span class="slider">
+                  <span class="text ar">AR</span>
+                  <span class="text en">EN</span>
+                </span>
+              </label>
+            </div>
           </div>
 
           <!-- اللوجو في المنتصف -->
@@ -463,9 +471,7 @@
               <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=200&fit=crop" alt="فنادق ومنتجعات"/>
             </div>
             <div class="card-body">
-              <div class="card-img-wrap">
-                <img src="hotResorts.png" alt="Hot Resorts"/>
-              </div>
+              <div class="card-img-wrap"><img src="hotResorts.png" alt="Hot Resorts"/></div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="resorts">فنادق و منتجعات</div>
                 <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
@@ -480,9 +486,7 @@
               <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=400&h=200&fit=crop" alt="شاليهات"/>
             </div>
             <div class="card-body">
-              <div class="card-img-wrap">
-                <img src="chaletsBakes.png" alt="Chalets & Breaks"/>
-              </div>
+              <div class="card-img-wrap"><img src="chaletsBakes.png" alt="Chalets & Breaks"/></div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="chalets">شاليهات و مخيمات</div>
                 <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
@@ -497,9 +501,7 @@
               <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400&h=200&fit=crop" alt="غرف وشقق"/>
             </div>
             <div class="card-body">
-              <div class="card-img-wrap">
-                <img src="roomsApts.png" alt="Rooms & Apartments"/>
-              </div>
+              <div class="card-img-wrap"><img src="roomsApts.png" alt="Rooms & Apartments"/></div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="rooms">غرف و شقق</div>
                 <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
@@ -514,9 +516,7 @@
               <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=400&h=200&fit=crop" alt="كرفانات"/>
             </div>
             <div class="card-body">
-              <div class="card-img-wrap">
-                <img src="caravansCabins.png" alt="Caravans & Cabins"/>
-              </div>
+              <div class="card-img-wrap"><img src="caravansCabins.png" alt="Caravans & Cabins"/></div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="caravans">كرفانات و أكواخ</div>
                 <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
@@ -531,9 +531,7 @@
               <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=200&fit=crop" alt="بوفيهات"/>
             </div>
             <div class="card-body">
-              <div class="card-img-wrap">
-                <img src="staydh.png" alt="Stay Dhofar"/>
-              </div>
+              <div class="card-img-wrap"><img src="staydh.png" alt="Stay Dhofar"/></div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="buffets">بوفهيات</div>
                 <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
@@ -548,9 +546,7 @@
               <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=200&fit=crop" alt="سجل عقارك"/>
             </div>
             <div class="card-body">
-              <div class="card-img-wrap">
-                <img src="addprop.png" alt="Add Property"/>
-              </div>
+              <div class="card-img-wrap"><img src="addprop.png" alt="Add Property"/></div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="addprop">سجل عقارك الان</div>
                 <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
