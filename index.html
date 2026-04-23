@@ -232,7 +232,6 @@
 
     .card-img-wrap { width:60px; height:60px; border-radius:10px; overflow:hidden; flex-shrink:0; }
     .card-img-wrap img { width:100%; height:100%; object-fit:contain; }
-
     .card-label { font-size:clamp(11px,2.3vw,13px); font-weight:700; color:#161D1F; text-align:right; line-height:1.3; flex:1; }
 
     .grid-area { padding:30px 20px 20px; margin-top:0; }
@@ -410,7 +409,7 @@
               <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
             </svg>
           </div>
-          <input type="text" class="search-input" placeholder="ابحث عن وجهتك المثالية..."/>
+          <input type="text" id="searchInput" class="search-input" placeholder="ابحث عن وجهتك المثالية..."/>
           <button class="search-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="15 18 9 12 15 6"/>
@@ -421,8 +420,8 @@
 
       <div class="section-header">
         <span class="section-tag"><span class="tag-icon">✦</span> استكشف الآن</span>
-        <h2 class="section-title">وجهات إقامة <span class="gradient-text">مميزة</span></h2>
-        <p class="section-desc">اختر ما يناسب ذوقك وواستمتع بتجربة استثنائية</p>
+        <h2 class="section-title" data-key="cardsTitle">وجهات إقامة <span class="gradient-text">مميزة</span></h2>
+        <p class="section-desc" data-key="cardsDesc">اختر ما يناسب ذوقك وواستمتع بتجربة استثنائية</p>
       </div>
 
       <div class="row g-3">
@@ -438,10 +437,7 @@
               </div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="resorts">فنادق و منتجعات</div>
-                <div class="card-explore">
-                  اكتشف المزيد
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-                </div>
+                <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
               </div>
             </div>
           </div>
@@ -458,10 +454,7 @@
               </div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="chalets">شاليهات و مخيمات</div>
-                <div class="card-explore">
-                  اكتشف المزيد
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-                </div>
+                <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
               </div>
             </div>
           </div>
@@ -478,10 +471,7 @@
               </div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="rooms">غرف و شقق</div>
-                <div class="card-explore">
-                  اكتشف المزيد
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-                </div>
+                <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
               </div>
             </div>
           </div>
@@ -498,10 +488,7 @@
               </div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="caravans">كرفانات و أكواخ</div>
-                <div class="card-explore">
-                  اكتشف المزيد
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-                </div>
+                <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
               </div>
             </div>
           </div>
@@ -518,10 +505,7 @@
               </div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="buffets">بوفهيات</div>
-                <div class="card-explore">
-                  اكتشف المزيد
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-                </div>
+                <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
               </div>
             </div>
           </div>
@@ -538,10 +522,7 @@
               </div>
               <div class="card-body-inner">
                 <div class="card-label" data-key="addprop">سجل عقارك الان</div>
-                <div class="card-explore">
-                  اكتشف المزيد
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-                </div>
+                <div class="card-explore">اكتشف المزيد <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
               </div>
             </div>
           </div>
@@ -555,14 +536,14 @@
           <div class="banner-content">
             <div class="banner-badge">
               <span class="pulse-ring"></span>
-              <span class="badge-text">عروض صيفية</span>
+              <span class="badge-text" data-key="offerBadge">عروض صيفية</span>
             </div>
             <div class="banner-text">
-              <h3>خصم <span class="discount">40%</span></h3>
-              <p>على أول 5 حجوزات لهذا الموسم</p>
+              <h3 data-key="offerTitle">خصم <span class="discount">40%</span></h3>
+              <p data-key="offerSub">على أول 5 حجوزات لهذا الموسم</p>
             </div>
             <button class="offers-btn-creative">
-              <span>احصل على العرض</span>
+              <span data-key="offerBtn">احصل على العرض</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
             </button>
           </div>
@@ -574,52 +555,52 @@
       </div>
 
       <div class="destinations-section">
-        <h2 class="section-title-sm">✨ وجهات لا تفوتك</h2>
+        <h2 class="section-title-sm" data-key="destTitle">✨ وجهات لا تفوتك</h2>
         <div class="destinations-scroll">
           <div class="dest-card">
             <div class="dest-image"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=300&h=180&fit=crop" alt="جبل سمحان"/></div>
-            <div class="dest-info"><h4>جبل سمحان</h4><span>3 أماكن</span></div>
+            <div class="dest-info"><h4 data-key="dest1">جبل سمحان</h4><span data-key="dest1Count">3 أماكن</span></div>
           </div>
           <div class="dest-card">
             <div class="dest-image"><img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=300&h=180&fit=crop" alt="وادي دربات"/></div>
-            <div class="dest-info"><h4>وادي دربات</h4><span>5 أماكن</span></div>
+            <div class="dest-info"><h4 data-key="dest2">وادي دربات</h4><span data-key="dest2Count">5 أماكن</span></div>
           </div>
           <div class="dest-card">
             <div class="dest-image"><img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=300&h=180&fit=crop" alt="المرباط"/></div>
-            <div class="dest-info"><h4>المرباط</h4><span>8 أماكن</span></div>
+            <div class="dest-info"><h4 data-key="dest3">المرباط</h4><span data-key="dest3Count">8 أماكن</span></div>
           </div>
           <div class="dest-card">
             <div class="dest-image"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300&h=180&fit=crop" alt="شاطئ المغسيل"/></div>
-            <div class="dest-info"><h4>شاطئ المغسيل</h4><span>4 أماكن</span></div>
+            <div class="dest-info"><h4 data-key="dest4">شاطئ المغسيل</h4><span data-key="dest4Count">4 أماكن</span></div>
           </div>
         </div>
       </div>
 
       <div class="why-section">
         <div class="section-header">
-          <h2 class="section-title">لماذا <span class="gradient-text">ڤالو</span>؟</h2>
+          <h2 class="section-title" data-key="whyTitle">لماذا <span class="gradient-text">ڤالو</span>؟</h2>
         </div>
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <h4>حجز آمن</h4>
-            <p>دفع آمن وضمان استرداد</p>
+            <h4 data-key="feat1">حجز آمن</h4>
+            <p data-key="feat1Sub">دفع آمن وضمان استرداد</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
-            <h4>دعم 24/7</h4>
-            <p>نحن هنا دائماً لخدمتك</p>
+            <h4 data-key="feat2">دعم 24/7</h4>
+            <p data-key="feat2Sub">نحن هنا دائماً لخدمتك</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-            <h4>جودة مضمونة</h4>
-            <p>أفضل الوجهات المختارة</p>
+            <h4 data-key="feat3">جودة مضمونة</h4>
+            <p data-key="feat3Sub">أفضل الوجهات المختارة</p>
           </div>
         </div>
       </div>
@@ -660,30 +641,97 @@
     }
 
     const translations = {
-      ar: { title:"صيف ظفار مع ڤـالو 🌿", sub:"اكتشف أجمل أماكن الإقامة والمنتجعات والرحلات في ظفار بكل سهولة.", resorts:"فنادق و منتجعات", chalets:"شاليهات و مخيمات", rooms:"غرف و شقق", caravans:"كرفانات و أكواخ", buffets:"بوفهيات", addprop:"سجل عقارك الان", statPlaces:"مكان", statRating:"تقييم", statSatisfy:"رضا" },
-      en: { title:"Dhofar Summer with Valo 🌿", sub:"Discover the best stays, resorts and trips in Dhofar easily.", resorts:"Hotels & Resorts", chalets:"Chalets & Camps", rooms:"Rooms & Apartments", caravans:"Caravans & Cabins", buffets:"Buffets", addprop:"List Your Property", statPlaces:"Places", statRating:"Rating", statSatisfy:"Satisfaction" }
+      ar: {
+        sub        : "اكتشف أجمل أماكن الإقامة والمنتجعات والرحلات في ظفار بكل سهولة.",
+        resorts    : "فنادق و منتجعات",
+        chalets    : "شاليهات و مخيمات",
+        rooms      : "غرف و شقق",
+        caravans   : "كرفانات و أكواخ",
+        buffets    : "بوفهيات",
+        addprop    : "سجل عقارك الان",
+        statPlaces : "مكان",
+        statRating : "تقييم",
+        statSatisfy: "رضا",
+        searchPh   : "ابحث عن وجهتك المثالية...",
+        offerBadge : "عروض صيفية",
+        offerTitle : 'خصم <span class="discount">40%</span>',
+        offerSub   : "على أول 5 حجوزات لهذا الموسم",
+        offerBtn   : "احصل على العرض",
+        destTitle  : "✨ وجهات لا تفوتك",
+        dest1: "جبل سمحان",    dest1Count: "3 أماكن",
+        dest2: "وادي دربات",   dest2Count: "5 أماكن",
+        dest3: "المرباط",      dest3Count: "8 أماكن",
+        dest4: "شاطئ المغسيل", dest4Count: "4 أماكن",
+        whyTitle   : 'لماذا <span class="gradient-text">ڤالو</span>؟',
+        feat1: "حجز آمن",      feat1Sub: "دفع آمن وضمان استرداد",
+        feat2: "دعم 24/7",     feat2Sub: "نحن هنا دائماً لخدمتك",
+        feat3: "جودة مضمونة", feat3Sub: "أفضل الوجهات المختارة",
+        cardsTitle : 'وجهات إقامة <span class="gradient-text">مميزة</span>',
+        cardsDesc  : "اختر ما يناسب ذوقك وواستمتع بتجربة استثنائية",
+      },
+      en: {
+        sub        : "Discover the best stays, resorts and trips in Dhofar easily.",
+        resorts    : "Hotels & Resorts",
+        chalets    : "Chalets & Camps",
+        rooms      : "Rooms & Apartments",
+        caravans   : "Caravans & Cabins",
+        buffets    : "Buffets",
+        addprop    : "List Your Property",
+        statPlaces : "Places",
+        statRating : "Rating",
+        statSatisfy: "Satisfaction",
+        searchPh   : "Search for your perfect destination...",
+        offerBadge : "Summer Offers",
+        offerTitle : '40% <span class="discount">OFF</span>',
+        offerSub   : "On first 5 bookings this season",
+        offerBtn   : "Get the Offer",
+        destTitle  : "✨ Must-Visit Destinations",
+        dest1: "Jabal Samhan",   dest1Count: "3 places",
+        dest2: "Wadi Darbat",    dest2Count: "5 places",
+        dest3: "Mirbat",         dest3Count: "8 places",
+        dest4: "Mughsail Beach", dest4Count: "4 places",
+        whyTitle   : 'Why <span class="gradient-text">Valo</span>?',
+        feat1: "Safe Booking",   feat1Sub: "Secure payment & refund guarantee",
+        feat2: "24/7 Support",   feat2Sub: "We're always here for you",
+        feat3: "Guaranteed Quality", feat3Sub: "Best curated destinations",
+        cardsTitle : 'Featured <span class="gradient-text">Destinations</span>',
+        cardsDesc  : "Choose what suits you and enjoy an exceptional experience",
+      }
     };
 
     function applyLanguage(lang) {
       const t = translations[lang];
       document.documentElement.lang = lang;
       document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
+
       const badge = document.querySelector('.badge-pulse');
       if (badge) badge.innerHTML = lang === 'en' ? '✦ Dhofar Summer with Valo 🌿' : '✦ صيف ظفار مع ڤـالو 🌿';
-      const sub = document.getElementById("mainSub");
-      if (sub) sub.innerText = t.sub;
+
+      const searchInput = document.getElementById("searchInput");
+      if (searchInput) searchInput.placeholder = t.searchPh;
+
       document.getElementById("greetingName").innerText = greetingTr[lang].name;
-      document.querySelectorAll("[data-key]").forEach(el => { const key = el.getAttribute("data-key"); if (t[key]) el.innerText = t[key]; });
+
       const sectionTag = document.querySelector('.section-tag');
-      if (sectionTag) sectionTag.innerHTML = lang === 'en' ? '<span class="tag-icon">✦</span> Explore Now' : '<span class="tag-icon">✦</span> استكشف الآن';
-      const sectionTitle = document.querySelector('.section-title');
-      if (sectionTitle) sectionTitle.innerHTML = lang === 'en' ? 'Featured <span class="gradient-text">Destinations</span>' : 'وجهات إقامة <span class="gradient-text">مميزة</span>';
-      const sectionDesc = document.querySelector('.section-desc');
-      if (sectionDesc) sectionDesc.innerText = lang === 'en' ? 'Choose what suits you and enjoy an exceptional experience' : 'اختر ما يناسب ذوقك وواستمتع بتجربة استثنائية';
+      if (sectionTag) sectionTag.innerHTML = lang === 'en'
+        ? '<span class="tag-icon">✦</span> Explore Now'
+        : '<span class="tag-icon">✦</span> استكشف الآن';
+
+      const htmlKeys = ['offerTitle', 'whyTitle', 'cardsTitle'];
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (!t[key]) return;
+        if (htmlKeys.includes(key)) {
+          el.innerHTML = t[key];
+        } else {
+          el.innerText = t[key];
+        }
+      });
+
       document.querySelectorAll('.card-explore').forEach(el => {
-        const svg = el.querySelector('svg');
-        el.innerHTML = (lang === 'en' ? 'Explore More ' : 'اكتشف المزيد ');
-        if (svg) el.appendChild(svg);
+        const svg = el.querySelector('svg').cloneNode(true);
+        el.innerHTML = lang === 'en' ? 'Explore More ' : 'اكتشف المزيد ';
+        el.appendChild(svg);
       });
     }
 
